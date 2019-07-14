@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using data = TFTInsert.DataModels;
 using TFTInsert.Entities;
 using Newtonsoft.Json.Linq;
+using System.Text.RegularExpressions;
 
 namespace TFTInsert
 {
@@ -115,9 +116,86 @@ namespace TFTInsert
         }
         static void InsertItems()
         {
+            string json = "";
+            using (StreamReader r = new StreamReader(resourcePath + "items.json"))
+            {
+                json = r.ReadToEnd();
+            }
+            tftItems items = JsonConvert.DeserializeObject<tftItems>(json);
+            IList<data.ItemLink> allItems = MapItems(items);
 
+            foreach(data.ItemLink item in allItems)
+            {
+                db.ItemLink.Add(item);
+            }
         }
 
+
+        static IList<data.ItemLink> MapItems(tftItems items)
+        {
+            IList<data.ItemLink> links = new List<data.ItemLink>();
+            IList<data.ItemComponent> itemComponents = new List<data.ItemComponent>();
+
+            foreach(PropertyInfo prop in items.GetType().GetProperties())
+            {
+                object value = prop.GetValue(items);
+                Type t = value.GetType();
+                
+                if(t == typeof(ItemComponent))
+                {
+                    ItemComponent temp = (ItemComponent)value;
+                    data.ItemComponent itemComponent = new data.ItemComponent
+                    {
+                        Name = temp.name,
+                        Type = temp.type,
+                        Bonus = temp.bonus,
+                        Tier = temp.tier,
+                        Depth = temp.depth,
+                        Kind = temp.kind
+                    };
+                    foreach(ItemStat stat in temp.stats)
+                    {
+                        data.ItemComponentStat val = new data.ItemComponentStat
+                        {
+                            Name = stat.name,
+                            Title = stat.title,
+                            Amount = stat.amount
+                        };
+                        itemComponent.ItemComponentStat.Add(val);
+                    }
+                    itemComponents.Add(itemComponent);
+                }
+                else if (t == typeof(ItemFull))
+                {
+                    ItemFull temp = (ItemFull)value;
+                    data.ItemFull item = new data.ItemFull
+                    {
+                        Name = temp.name,
+                        Type = temp.type,
+                        Bonus = temp.bonus,
+                        Tier = temp.tier,
+                        Depth = temp.depth,
+                        Kind = temp.kind
+                    };
+                    temp.buildsFrom = temp.buildsFrom.Distinct().ToList();
+                    foreach (string buildComponent in temp.buildsFrom)
+                    {
+                            Regex pattern = new Regex("[.,' ]");
+
+                            data.ItemComponent comp = itemComponents.First(x => pattern.Replace(x.Name.ToLower(), "") == buildComponent);
+                            data.ItemLink link = new data.ItemLink
+                            {
+                                ItemComponent = comp,
+                                ItemFull = item
+                            };
+                            links.Add(link);
+                    }
+
+                }
+            }
+
+            return links;
+        }
 
         static IList<object> Map(object input)
         {
