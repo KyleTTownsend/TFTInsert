@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
-namespace TFTInsert.Models
+
+namespace TFTInsert.DataModels
 {
     public partial class mytftdbContext : DbContext
     {
@@ -18,10 +18,11 @@ namespace TFTInsert.Models
         public virtual DbSet<Ability> Ability { get; set; }
         public virtual DbSet<AbilityStat> AbilityStat { get; set; }
         public virtual DbSet<Champion> Champion { get; set; }
+        public virtual DbSet<ChampionClassLink> ChampionClassLink { get; set; }
+        public virtual DbSet<ChampionOriginLink> ChampionOriginLink { get; set; }
         public virtual DbSet<ChampionStat> ChampionStat { get; set; }
         public virtual DbSet<Class> Class { get; set; }
         public virtual DbSet<ClassBonus> ClassBonus { get; set; }
-        public virtual DbSet<ClassBonusLink> ClassBonusLink { get; set; }
         public virtual DbSet<Img> Img { get; set; }
         public virtual DbSet<ItemComponent> ItemComponent { get; set; }
         public virtual DbSet<ItemComponentStat> ItemComponentStat { get; set; }
@@ -29,7 +30,6 @@ namespace TFTInsert.Models
         public virtual DbSet<ItemLink> ItemLink { get; set; }
         public virtual DbSet<Origin> Origin { get; set; }
         public virtual DbSet<OriginBonus> OriginBonus { get; set; }
-        public virtual DbSet<OriginBonusLink> OriginBonusLink { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Ability>(entity =>
@@ -63,7 +63,7 @@ namespace TFTInsert.Models
                     .WithMany(p => p.Ability)
                     .HasForeignKey(d => d.ChampionId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ability__champio__534D60F1");
+                    .HasConstraintName("FK_ability_champion_id");
             });
 
             modelBuilder.Entity<AbilityStat>(entity =>
@@ -97,18 +97,58 @@ namespace TFTInsert.Models
 
                 entity.Property(e => e.ChampionId).HasColumnName("champion_id");
 
-                entity.Property(e => e.ChampionStatsId).HasColumnName("champion_stats_id");
-
-                entity.Property(e => e.ClassId).HasColumnName("class_id");
-
                 entity.Property(e => e.Cost).HasColumnName("cost");
 
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<ChampionClassLink>(entity =>
+            {
+                entity.HasKey(e => new { e.ChampionId, e.ClassId });
+
+                entity.ToTable("champion_class_link");
+
+                entity.Property(e => e.ChampionId).HasColumnName("champion_id");
+
+                entity.Property(e => e.ClassId).HasColumnName("class_id");
+
+                entity.HasOne(d => d.Champion)
+                    .WithMany(p => p.ChampionClassLink)
+                    .HasForeignKey(d => d.ChampionId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_champion_class");
+
+                entity.HasOne(d => d.Class)
+                    .WithMany(p => p.ChampionClassLink)
+                    .HasForeignKey(d => d.ClassId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_class_champion");
+            });
+
+            modelBuilder.Entity<ChampionOriginLink>(entity =>
+            {
+                entity.HasKey(e => new { e.ChampionId, e.OriginId });
+
+                entity.ToTable("champion_origin_link");
+
+                entity.Property(e => e.ChampionId).HasColumnName("champion_id");
 
                 entity.Property(e => e.OriginId).HasColumnName("origin_id");
+
+                entity.HasOne(d => d.Champion)
+                    .WithMany(p => p.ChampionOriginLink)
+                    .HasForeignKey(d => d.ChampionId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_champion");
+
+                entity.HasOne(d => d.Origin)
+                    .WithMany(p => p.ChampionOriginLink)
+                    .HasForeignKey(d => d.OriginId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_origin");
             });
 
             modelBuilder.Entity<ChampionStat>(entity =>
@@ -138,8 +178,7 @@ namespace TFTInsert.Models
                 entity.HasOne(d => d.Champion)
                     .WithMany(p => p.ChampionStat)
                     .HasForeignKey(d => d.ChampionId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__champion___magic__59063A47");
+                    .HasConstraintName("fk_champion_id");
             });
 
             modelBuilder.Entity<Class>(entity =>
@@ -167,6 +206,8 @@ namespace TFTInsert.Models
 
                 entity.Property(e => e.ClassBonusId).HasColumnName("class_bonus_id");
 
+                entity.Property(e => e.ClassId).HasColumnName("class_id");
+
                 entity.Property(e => e.Effect)
                     .HasColumnName("effect")
                     .HasMaxLength(200)
@@ -176,29 +217,11 @@ namespace TFTInsert.Models
                     .HasColumnName("needed")
                     .HasMaxLength(30)
                     .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<ClassBonusLink>(entity =>
-            {
-                entity.HasKey(e => new { e.ClassId, e.ClassBonusId });
-
-                entity.ToTable("class_bonus_link");
-
-                entity.Property(e => e.ClassId).HasColumnName("class_id");
-
-                entity.Property(e => e.ClassBonusId).HasColumnName("class_bonus_id");
-
-                entity.HasOne(d => d.ClassBonus)
-                    .WithMany(p => p.ClassBonusLink)
-                    .HasForeignKey(d => d.ClassBonusId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__class_bon__class__74AE54BC");
 
                 entity.HasOne(d => d.Class)
-                    .WithMany(p => p.ClassBonusLink)
+                    .WithMany(p => p.ClassBonus)
                     .HasForeignKey(d => d.ClassId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__class_bon__class__73BA3083");
+                    .HasConstraintName("pk_class_id");
             });
 
             modelBuilder.Entity<Img>(entity =>
@@ -334,16 +357,16 @@ namespace TFTInsert.Models
 
                 entity.Property(e => e.OriginId).HasColumnName("origin_id");
 
-                entity.Property(e => e.Description)
-                    .HasColumnName("description")
-                    .HasMaxLength(200)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.ImgId).HasColumnName("img_id");
+                entity.Property(e => e.ImdId).HasColumnName("imd_id");
 
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
-                    .HasMaxLength(20)
+                    .HasMaxLength(40)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.OriginDesc)
+                    .HasColumnName("origin_desc")
+                    .HasMaxLength(200)
                     .IsUnicode(false);
             });
 
@@ -355,32 +378,16 @@ namespace TFTInsert.Models
 
                 entity.Property(e => e.Effect)
                     .HasColumnName("effect")
-                    .HasMaxLength(50)
+                    .HasMaxLength(200)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Needed).HasColumnName("needed");
-            });
-
-            modelBuilder.Entity<OriginBonusLink>(entity =>
-            {
-                entity.HasKey(e => new { e.OriginId, e.OriginBonusId });
-
-                entity.ToTable("origin_bonus_link");
 
                 entity.Property(e => e.OriginId).HasColumnName("origin_id");
 
-                entity.Property(e => e.OriginBonusId).HasColumnName("origin_bonus_id");
-
-                entity.HasOne(d => d.OriginBonus)
-                    .WithMany(p => p.OriginBonusLink)
-                    .HasForeignKey(d => d.OriginBonusId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_origin_bonus_id");
-
                 entity.HasOne(d => d.Origin)
-                    .WithMany(p => p.OriginBonusLink)
+                    .WithMany(p => p.OriginBonus)
                     .HasForeignKey(d => d.OriginId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_origin_id");
             });
         }

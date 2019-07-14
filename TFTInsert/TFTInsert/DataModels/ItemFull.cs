@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TFTInsert.Models
+namespace TFTInsert.DataModels
 {
-    public partial class ItemComponent
+    public partial class ItemFull
     {
-        public ItemComponent()
+        public ItemFull()
         {
-            ItemComponentStat = new HashSet<ItemComponentStat>();
             ItemLink = new HashSet<ItemLink>();
         }
 
-        public int ItemComponentId { get; set; }
+        public int ItemFullId { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
         public string Bonus { get; set; }
@@ -19,7 +18,6 @@ namespace TFTInsert.Models
         public short? Depth { get; set; }
         public string Kind { get; set; }
 
-        public ICollection<ItemComponentStat> ItemComponentStat { get; set; }
         public ICollection<ItemLink> ItemLink { get; set; }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TFTInsert.Models
+namespace TFTInsert.DataModels
 {
     public partial class ChampionStat
     {
         public int StatId { get; set; }
-        public int ChampionId { get; set; }
+        public int? ChampionId { get; set; }
         public short? Damage { get; set; }
         public double? AttackSpeed { get; set; }
         public short? Dps { get; set; }

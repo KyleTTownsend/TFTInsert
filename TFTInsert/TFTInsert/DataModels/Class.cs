@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TFTInsert.Models
+namespace TFTInsert.DataModels
 {
     public partial class Class
     {
         public Class()
         {
-            ClassBonusLink = new HashSet<ClassBonusLink>();
+            ChampionClassLink = new HashSet<ChampionClassLink>();
+            ClassBonus = new HashSet<ClassBonus>();
         }
 
         public int ClassId { get; set; }
@@ -15,6 +16,7 @@ namespace TFTInsert.Models
         public string ClassDesc { get; set; }
         public int? ImgId { get; set; }
 
-        public ICollection<ClassBonusLink> ClassBonusLink { get; set; }
+        public ICollection<ChampionClassLink> ChampionClassLink { get; set; }
+        public ICollection<ClassBonus> ClassBonus { get; set; }
     }
 }

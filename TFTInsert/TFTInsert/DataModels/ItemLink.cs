@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TFTInsert.Models
+namespace TFTInsert.DataModels
 {
     public partial class ItemLink
     {

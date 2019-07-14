@@ -1,0 +1,614 @@
+﻿{
+  "bfsword": {
+    "key": "bfsword",
+    "name": "B.F. Sword",
+    "type": "Offensive",
+    "bonus": "+20 Attack Damage.",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": "attackDamage",
+        "title": "Attack Damage",
+        "amount": "+20"
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "infinityedge",
+      "hextechgunblade",
+      "guardianangel",
+      "spearofshojin",
+      "swordofthedivine",
+      "youmuusghostblade",
+      "bloodthirster",
+      "zekesherald"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "needlesslylargerod": {
+    "key": "needlesslylargerod",
+    "name": "Needlessly Large Rod",
+    "type": "Offensive",
+    "bonus": "+20% Spell Damage",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": "abilityPower",
+        "title": "Spell Damage",
+        "amount": "+20%"
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "guinsoosrageblade",
+      "rabadonsdeathcap",
+      "hextechgunblade",
+      "yuumi",
+      "morellonomicon",
+      "ionicspark",
+      "locketoftheironsolari",
+      "ludensecho"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "recurvebow": {
+    "key": "recurvebow",
+    "name": "Recurve Bow",
+    "type": "Offensive",
+    "bonus": "+20% Attack Speed",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": "attackSpeed",
+        "title": "Attack Speed",
+        "amount": "+15%"
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "statikkshiv",
+      "guinsoosrageblade",
+      "swordofthedivine",
+      "cursedblade",
+      "rapidfirecannon",
+      "phantomdancer",
+      "titanichydra",
+      "bladeoftheruinedking"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "chainvest": {
+    "key": "chainvest",
+    "name": "Chain Vest",
+    "type": "Defensive",
+    "bonus": "+20 Armor.",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": "armor",
+        "title": "Armor",
+        "amount": "+20"
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "locketoftheironsolari",
+      "guardianangel",
+      "thornmail",
+      "phantomdancer",
+      "frozenheart",
+      "swordbreaker",
+      "redbuff",
+      "knightsvow"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "giantsbelt": {
+    "key": "giantsbelt",
+    "name": "Giant's Belt",
+    "type": "Defensive",
+    "bonus": "+200 Health.",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": "health",
+        "title": "Health",
+        "amount": "+200"
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "zekesherald",
+      "titanichydra",
+      "morellonomicon",
+      "redemption",
+      "redbuff",
+      "zephyr",
+      "warmogsarmor",
+      "frozenmallet"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "spatula": {
+    "key": "spatula",
+    "name": "Spatula",
+    "type": "Utility",
+    "bonus": "It must do something...",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": null,
+        "title": "It must do something...",
+        "amount": null
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "forceofnature",
+      "bladeoftheruinedking",
+      "youmuusghostblade",
+      "yuumi",
+      "darkin",
+      "knightsvow",
+      "runaanshurricane",
+      "frozenmallet"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "negatroncloak": {
+    "key": "negatroncloak",
+    "name": "Negatron Cloak",
+    "type": "Defensive",
+    "bonus": "+20 Magic Resist.",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": "magicResist",
+        "title": "Magic Resist",
+        "amount": "+20"
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "bloodthirster",
+      "ionicspark",
+      "hush",
+      "cursedblade",
+      "runaanshurricane",
+      "zephyr",
+      "dragonsclaw",
+      "swordbreaker"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "tearofthegoddess": {
+    "key": "tearofthegoddess",
+    "name": "Tear of the Goddess",
+    "type": "Utility",
+    "bonus": "+20 Starting Mana.",
+    "tier": 1,
+    "depth": 1,
+    "stats": [
+      {
+        "name": "mana",
+        "title": "Starting Mana",
+        "amount": "+20"
+      }
+    ],
+    "kind": "basic",
+    "buildsInto": [
+      "statikkshiv",
+      "ludensecho",
+      "seraphsembrace",
+      "spearofshojin",
+      "frozenheart",
+      "hush",
+      "redemption",
+      "darkin"
+    ],
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "forceofnature": {
+    "key": "forceofnature",
+    "name": "Force of Nature",
+    "type": "Utility",
+    "bonus": "Gain + team size.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "spatula", "spatula" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "bladeoftheruinedking": {
+    "key": "bladeoftheruinedking",
+    "name": "Blade of the Ruined King",
+    "type": "Offensive",
+    "bonus": "Wearer is also a Blademaster.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "spatula", "recurvebow" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "bloodthirster": {
+    "key": "bloodthirster",
+    "name": "Bloodthirster",
+    "type": "Defensive",
+    "bonus": "Attacks heal for 50% of damage.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "bfsword", "negatroncloak" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "cursedblade": {
+    "key": "cursedblade",
+    "name": "Cursed Blade",
+    "type": "Utility",
+    "bonus": "Attacks have a low chance to Shrink (-1 enemy star level 1).",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "negatroncloak", "recurvebow" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "darkin": {
+    "key": "darkin",
+    "name": "Darkin",
+    "type": "Utility",
+    "bonus": "Wearer is also a Demon.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "spatula", "tearofthegoddess" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "dragonsclaw": {
+    "key": "dragonsclaw",
+    "name": "Dragon's Claw",
+    "type": "Defensive",
+    "bonus": "83% resistance to magic damage.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "negatroncloak", "negatroncloak" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "frozenheart": {
+    "key": "frozenheart",
+    "name": "Frozen Heart",
+    "type": "Defensive",
+    "bonus": "Adjacent enemies lose 20% Attack Speed.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "tearofthegoddess", "chainvest" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "frozenmallet": {
+    "key": "frozenmallet",
+    "name": "Frozen Mallet",
+    "type": "Utility",
+    "bonus": "Wearer is also a Glacial.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "giantsbelt", "spatula" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "guardianangel": {
+    "key": "guardianangel",
+    "name": "Guardian Angel",
+    "type": "Utility",
+    "bonus": "Revives champ with 500 HP.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "bfsword", "chainvest" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "guinsoosrageblade": {
+    "key": "guinsoosrageblade",
+    "name": "Guinsoo's Rageblade",
+    "type": "Offensive",
+    "bonus": "Attacks give 3% Attack Speed. Stacks infinitely.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "needlesslylargerod", "recurvebow" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "hextechgunblade": {
+    "key": "hextechgunblade",
+    "name": "Hextech Gunblade",
+    "type": "Defensive",
+    "bonus": "Heal for 25% of all damage dealt.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "bfsword", "needlesslylargerod" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "hush": {
+    "key": "hush",
+    "name": "Hush",
+    "type": "Utility",
+    "bonus": "Attacks have a high chance to Silence.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "tearofthegoddess", "negatroncloak" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "infinityedge": {
+    "key": "infinityedge",
+    "name": "Infinity Edge",
+    "type": "Offensive",
+    "bonus": "Critical Strikes deal +100% damage.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "bfsword", "bfsword" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "ionicspark": {
+    "key": "ionicspark",
+    "name": "Ionic Spark",
+    "type": "Utility",
+    "bonus": "Whenever an enemy casts a spell they take 200 damage.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "negatroncloak", "needlesslylargerod" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "knightsvow": {
+    "key": "knightsvow",
+    "name": "Knights Vow",
+    "type": "Utility",
+    "bonus": "Wearer is also a Knight.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "chainvest", "spatula" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "locketoftheironsolari": {
+    "key": "locketoftheironsolari",
+    "name": "Locket of the Iron Solari",
+    "type": "Defensive",
+    "bonus": "On start of combat, adjacent allies get <strong style='color: white;'>200 shield.</span>",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "needlesslylargerod", "chainvest" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "ludensecho": {
+    "key": "ludensecho",
+    "name": "Luden's Echo",
+    "type": "Offensive",
+    "bonus": "Deal 200 splash damage on ability hit.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "needlesslylargerod", "tearofthegoddess" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "morellonomicon": {
+    "key": "morellonomicon",
+    "name": "Morellonomicon",
+    "type": "Offensive",
+    "bonus": "Spells burn 2.5% of the enemy max HP per second.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "needlesslylargerod", "giantsbelt" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "phantomdancer": {
+    "key": "phantomdancer",
+    "name": "Phantom Dancer",
+    "type": "Defensive",
+    "bonus": "Wearer dodges all Critical Strikes.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "chainvest", "recurvebow" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "rabadonsdeathcap": {
+    "key": "rabadonsdeathcap",
+    "name": "Rabadon's Deathcap",
+    "type": "Offensive",
+    "bonus": "Wearer's Ability Damage increased by 50%.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "needlesslylargerod", "needlesslylargerod" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "rapidfirecannon": {
+    "key": "rapidfirecannon",
+    "name": "Rapid Firecannon",
+    "type": "Offensive",
+    "bonus": "Attacks cannot be dodged. Attack Range is doubled.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "recurvebow", "recurvebow" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "redbuff": {
+    "key": "redbuff",
+    "name": "Red Buff",
+    "type": "Offensive",
+    "bonus": "Attacks burn for 2.5% max HP and disable healing.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "chainvest", "giantsbelt" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "redemption": {
+    "key": "redemption",
+    "name": "Redemption",
+    "type": "Utility",
+    "bonus": "On death heal all nearby allies for 1000 HP.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "tearofthegoddess", "giantsbelt" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "runaanshurricane": {
+    "key": "runaanshurricane",
+    "name": "Runaan's Hurricane",
+    "type": "Offensive",
+    "bonus": "Attacks hit additional enemies and deal 50% damage.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "spatula", "negatroncloak" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "seraphsembrace": {
+    "key": "seraphsembrace",
+    "name": "Runaan's Hurricane",
+    "type": "Utility",
+    "bonus": "Regain 20 mana each time a spell is cast",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "tearofthegoddess", "tearofthegoddess" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "spearofshojin": {
+    "key": "spearofshojin",
+    "name": "Spear of Shojin",
+    "type": "Utility",
+    "bonus": "After casting, gain 15% of max mana per attack.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "bfsword", "tearofthegoddess" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "statikkshiv": {
+    "key": "statikkshiv",
+    "name": "Statikk Shiv",
+    "type": "Offensive",
+    "bonus": "Every 3rd attack deals 100 splash magical damage.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "recurvebow", "tearofthegoddess" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "swordbreaker": {
+    "key": "swordbreaker",
+    "name": "Sword Breaker",
+    "type": "Utility",
+    "bonus": "Attacks have a chance to disarm.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "chainvest", "negatroncloak" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "swordofthedivine": {
+    "key": "swordofthedivine",
+    "name": "Sword of the Divine",
+    "type": "Offensive",
+    "bonus": "Every 1s gain a 5% chance to gain 100% Critical Strike.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "recurvebow", "bfsword" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "thornmail": {
+    "key": "thornmail",
+    "name": "Thornmail",
+    "type": "Defensive",
+    "bonus": "Reflect 35% of damage taken from attacks.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "chainvest", "chainvest" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "titanichydra": {
+    "key": "titanichydra",
+    "name": "Titanic Hydra",
+    "type": "Offensive",
+    "bonus": "Attacks deal 10% of the wearer's max HP as splash.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "giantsbelt", "recurvebow" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "warmogsarmor": {
+    "key": "warmogsarmor",
+    "name": "Warmog's Armor",
+    "type": "Defensive",
+    "bonus": "Regenerate 3% max <strong style='color: #20995D;'>Health</strong> per second.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "giantsbelt", "giantsbelt" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "youmuusghostblade": {
+    "key": "youmuusghostblade",
+    "name": "Youmuu's Ghostblade",
+    "type": "Utility",
+    "bonus": "Wearer is also an Assassin.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "spatula", "bfsword" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "yuumi": {
+    "key": "yuumi",
+    "name": "Yuumi",
+    "type": "Utility",
+    "bonus": "Wearer is also a Sorcerer.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "spatula", "needlesslylargerod" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "zekesherald": {
+    "key": "zekesherald",
+    "name": "Zeke's Herald",
+    "type": "Utility",
+    "bonus": "Adjacent allies gain +10% Attack Speed.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "bfsword", "giantsbelt" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  },
+  "zephyr": {
+    "key": "zephyr",
+    "name": "Zephyr",
+    "type": "Utility",
+    "bonus": "On start of combat banish an enemy.",
+    "tier": 1,
+    "depth": 2,
+    "buildsFrom": [ "negatroncloak", "giantsbelt" ],
+    "kind": "advanced",
+    "champs": [ "Ashe", "Yasuo", "Zed" ]
+  }
+}
