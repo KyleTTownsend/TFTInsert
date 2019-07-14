@@ -16,7 +16,9 @@ namespace TFTInsert
         public const string DeleteAbilityStats = "DELETE FROM ability_stat";
         public const string DeleteAbility = "DELETE FROM ability";
         public const string DeleteChampions = "DELETE FROM champion";
-
-
+        public const string DeleteItemComponentStats = "DELETE FROM item_component_stat";
+        public const string DeleteItemLink = "DELETE FROM item_link";
+        public const string DeleteItemComponent = "DELETE FROM item_component";
+        public const string DeleteItemFull = "DELETE FROM item_full";
     }
 }

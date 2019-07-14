@@ -52,6 +52,10 @@ namespace TFTInsert
             db.Database.ExecuteSqlCommand(Constants.DeleteOrigin);
             db.Database.ExecuteSqlCommand(Constants.DeleteClassBonus);
             db.Database.ExecuteSqlCommand(Constants.DeleteClass);
+            db.Database.ExecuteSqlCommand(Constants.DeleteItemComponentStats);
+            db.Database.ExecuteSqlCommand(Constants.DeleteItemLink);
+            db.Database.ExecuteSqlCommand(Constants.DeleteItemComponent);
+            db.Database.ExecuteSqlCommand(Constants.DeleteItemFull);
         }
 
 
